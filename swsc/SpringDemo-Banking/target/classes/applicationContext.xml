@@ -10,10 +10,13 @@
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     
 
-    
+   <bean id="jdbcTemplate" class = "org.springframework.jdbc.core.JdbcTemplate"> 
+        <property name="dataSource"  ref="dataSource"/>
+    </bean>
        
-    <bean id="bankService" class="eu.ibacz.swsc.spring.di.testdependencyinjection.service.impl.BankServiceImpl"/>
-    
+   <bean id="templateCustomerDao" class="eu.ibacz.swsc.spring.di.testdependencyinjection.dao.impl.JdbcTemplateCustomerDaoImpl">
+     <property name="jdbcTemplate"  ref="jdbcTemplate"/>
+    </bean>
     
     <bean class="eu.ibacz.swsc.spring.di.testdependencyinjection.aspect.BankServiceLoggingAspect"  />
     
@@ -22,7 +25,7 @@
     </bean>
     
     <bean id="bankServiceImpl" class="eu.ibacz.swsc.spring.di.testdependencyinjection.service.impl.BankServiceImpl">
-    <property name="customerDao"  ref="customerDAO"/>
+    <property name="customerDao"  ref="templateCustomerDao"/>
     </bean>
     
 </beans>

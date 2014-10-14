@@ -1,0 +1,10 @@
+#surefire
+#Tue Oct 14 15:21:22 CEST 2014
+jpda.listen=true
+maven.surefire.debug=-Xdebug -Xrunjdwp\:transport\=dt_socket,server\=n,address\=55191
+user.dir=/home/xkaiser1/NetBeansProjects/Seminar04/swsc/SpringDemo-Banking
+jpda.address=55191
+localRepository=/tmp/maven-repo-xkaiser1
+forkMode=once
+basedir=/home/xkaiser1/NetBeansProjects/Seminar04/swsc/SpringDemo-Banking
+test=eu.ibacz.swsc.spring.di.testdependencyinjection.BankServiceTest\#testGetAllCustomers

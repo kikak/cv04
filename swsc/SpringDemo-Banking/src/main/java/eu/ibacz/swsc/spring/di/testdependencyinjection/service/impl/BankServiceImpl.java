@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class BankServiceImpl implements BankService {
        
-    private DataSource dataSource;
     private CustomerDao customerDao;
 
     

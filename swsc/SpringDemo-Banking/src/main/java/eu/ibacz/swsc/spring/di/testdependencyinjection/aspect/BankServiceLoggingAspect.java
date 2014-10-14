@@ -23,4 +23,11 @@ public class BankServiceLoggingAspect {
         return result;
     }
     
+    @Around("execution(* eu.ibacz.swsc.spring.di.testdependencyinjection.service.BankService.getAllCustomers(..)) )")
+    public Object onGetAllCustomers(ProceedingJoinPoint pjp) throws Throwable {
+        System.out.println("Tesne pred vybratim vsetkych klientov");
+        Object result = pjp.proceed();
+        return result;
+    }
+    
 }
