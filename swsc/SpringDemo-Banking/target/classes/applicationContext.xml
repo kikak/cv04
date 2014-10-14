@@ -18,7 +18,12 @@
      <property name="jdbcTemplate"  ref="jdbcTemplate"/>
     </bean>
     
-    <bean class="eu.ibacz.swsc.spring.di.testdependencyinjection.aspect.BankServiceLoggingAspect"  />
+    <bean id= "outnotifier" class = "eu.ibacz.swsc.spring.commons.springdemocommons.SysOutNotifier">
+    </bean>
+    
+    <bean class="eu.ibacz.swsc.spring.di.testdependencyinjection.aspect.BankServiceLoggingAspect" > 
+      <property name="notifier" ref="outnotifier"/>
+    </bean>
     
     <bean id="customerDAO" class="eu.ibacz.swsc.spring.di.testdependencyinjection.dao.impl.PureJdbcCustomerDaoImpl">
      <property name="dataSource"  ref="dataSource"/>
