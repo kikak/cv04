@@ -33,4 +33,8 @@
     <property name="customerDao"  ref="templateCustomerDao"/>
     </bean>
     
+    <bean id="remoteNotifier" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+    <property name="serviceUrl" value="http://localhost:8080/SpringDemo-Server/remoting/NotifierService"/>
+    <property name="serviceInterface" value="eu.ibacz.swsc.spring.commons.springdemocommons.Notifier"/>
+    </bean>
 </beans>
